@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>האפליקציה שלי</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#111827" />
+
+  <!-- iOS fallback (still nice to have) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="icons/icon-192.png" alt="" />
+      <div>
+        <div class="title">האפליקציה שלי</div>
+        <div class="subtitle">PWA לאנדרואיד (מסך בית)</div>
+      </div>
+    </div>
+    <button id="installBtn" class="btn" hidden>התקנה למסך הבית</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>ברוך הבא 👋</h1>
+      <p>
+        זו אפליקציית Web מסוג PWA. אחרי שתפרוס אותה לכתובת (URL) ותיכנס אליה
+        דרך Chrome באנדרואיד, תוכל להתקין למסך הבית והיא תיפתח כמו אפליקציה.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>דוגמה לפיצ'ר קטן</h2>
+      <div class="row">
+        <input id="noteInput" class="input" placeholder="כתוב משהו..." />
+        <button id="saveBtn" class="btn">שמור</button>
+      </div>
+      <div class="hint">נשמר מקומית במכשיר (LocalStorage)</div>
+      <div id="notes" class="notes"></div>
+      <button id="clearBtn" class="btn secondary">נקה הכל</button>
+    </section>
+
+    <section class="card">
+      <h2>אופליין</h2>
+      <p>
+        האפליקציה כוללת Service Worker בסיסי שמאפשר טעינה גם בלי אינטרנט (לאחר ביקור ראשון).
+      </p>
+      <div class="status" id="status"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
